@@ -32,7 +32,7 @@ console.log( 'The area of the triangle is:' , areaOfTriangle);
 // Write a JavaScript program that takes length and width of a rectangle and finds its perimeter. Print the result in the console.
 let lenghtOfRectangle=7;
 let heightOfRectangle=8;
-const perimeterOfRectangle= lenghtOfRectangle*heightOfRectangle*2;
+const perimeterOfRectangle= lenghtOfRectangle*2 + heightOfRectangle*2;
 console.log('The perimetar is:', perimeterOfRectangle);
 
 // Write a JavaScript program that will calculate area of circle. Print the result in the console
