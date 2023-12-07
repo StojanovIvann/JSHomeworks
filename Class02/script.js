@@ -1,14 +1,14 @@
 // Decription: Using prompt() display a dialog box that prompts the visitor for input. Will return null on 'Cancel' or the value provided on 'Ok'
 // Action: Ask the user how much money he has, and depending on the value, suggest to him what he should do
 const userMoney= prompt ("How much money do you have???");
-if(userMoney <= 0){
-    console.log('If you have', userMoney , "You should stay home")
+if((userMoney > 0) && (userMoney < 5)){
+    console.log('If you have', userMoney , "dollars you should stay home")
+}
+else if((userMoney < 20) && (userMoney > 5)){
+    console.log('If you have', userMoney ,"dollars you shoud go to the moovies!")
 }
 else if(userMoney > 20){
-    console.log('If you have', userMoney ,"You shoud go to the moovies!")
-}
-else if(userMoney <20){
-    console.log('If you have', userMoney ,"You shoud go out and party!!!")
+    console.log('If you have', userMoney ,"dollars you shoud go out and party!!!")
 }
 
 // Write a program to find maximum between two numbers.
@@ -32,7 +32,7 @@ if ((numberOne > numberTwo) && (numberOne > numberThree)){
 else if((numberOne < numberTwo) && (numberTwo > numberThree)){
     console.log(numberTwo);
 }
-else if((numberOne < numTwo) && (numberTwo < numThree)  ){
+else if((numberOne < numberTwo) && (numberTwo < numberThree)  ){
   console.log(numberThree);
 }
 
