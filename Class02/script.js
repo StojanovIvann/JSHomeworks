@@ -70,7 +70,7 @@ else if (dayOfWeek == 4){
     console.log("Thursday");
 }
 else if(dayOfWeek ==5){
-    console.log("friday");
+    console.log("Friday");
 }
 else if(dayOfWeek == 6){
     console.log("Saturday");
@@ -101,7 +101,7 @@ else{
 //  Percentage >= 40% : Grade E
 //  Percentage < 40% : Grade F
 
-const testScore= prompt ("Enter you % of the score  from the test!");
+const testScore= prompt ("Enter your % of the score  from the test!");
 if (testScore == NaN){
     console.log("Error")
 }
