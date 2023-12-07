@@ -1,25 +1,40 @@
-
 // Decription: Using prompt() display a dialog box that prompts the visitor for input. Will return null on 'Cancel' or the value provided on 'Ok'
 // Action: Ask the user how much money he has, and depending on the value, suggest to him what he should do
-const user= prompt ("How much money do you have???");
-if(user == 0){
-    console.log("You should stay home")
+const userMoney= prompt ("How much money do you have???");
+if(userMoney <= 0){
+    console.log('If you have', userMoney , "You should stay home")
 }
-else if(user > 20){
-    console.log("You shoud go to the moovies!")
+else if(userMoney > 20){
+    console.log('If you have', userMoney ,"You shoud go to the moovies!")
 }
-else if(user <20){
-    console.log("You shoud go out and party!!!")
+else if(userMoney <20){
+    console.log('If you have', userMoney ,"You shoud go out and party!!!")
 }
 
 // Write a program to find maximum between two numbers.
-
-
+const num1 = prompt ("Enter your first number");
+const  num2 = prompt ("Enter your second number");
+if (num1 > num2){
+    console.log(num1);
+}
+else if(num1 < num2){
+    console.log(num2);
+}
 
 
 //Write a program to find maximum between three numbers.
-
-
+const numberOne = prompt ("Enter your first number");
+const numberTwo = prompt ("Enter your second number");
+const numberThree = prompt ("Enter your third number");
+if ((numberOne > numberTwo) && (numberOne > numberThree)){
+        console.log(numberOne);
+}
+else if((numberOne < numberTwo) && (numberTwo > numberThree)){
+    console.log(numberTwo);
+}
+else if((numberOne < numTwo) && (numberTwo < numThree)  ){
+  console.log(numberThree);
+}
 
 
 
@@ -64,16 +79,16 @@ else if(dayOfWeek == 7){
     console.log("Sunday");
 }
 else {
-    console.log("error");
+    console.log("ERROR");
 }
 
 //Write a program that will check if user typed an input that is a number or not
-const number= prompt ("Enter number or something else!");
-if (number == NaN){
+const numberOrText= prompt ("Enter number or something else!");
+if (numberOrText == NaN){
     console.log("You didn't enter a number");
 }
 else{
-    console.log("You entered the number:",  number);
+    console.log("You entered the number:",  numberOrText);
 }
 
 // Write a program to input marks of five subjects 
