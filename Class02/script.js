@@ -33,27 +33,38 @@ const chineseZodiac = (year - 4) % 12;
         console.log("Rat");
     } else if (chineseZodiac == 1) {
        console.log("Ox");
-    } else if (chineseZodiac == 2) {
+    } 
+    else if (chineseZodiac == 2) {
         console.log("Tiger");
-    } else if (chineseZodiac == 3) {
+    } 
+    else if (chineseZodiac == 3) {
         console.log("Rabbit");
-    } else if (chineseZodiac == 4) {
+    } 
+    else if (chineseZodiac == 4) {
         console.log("Dragon");
-    } else if (chineseZodiac == 5) {
+    } 
+    else if (chineseZodiac == 5) {
         console.log("Snake");
-    } else if (chineseZodiac == 6) {
+    } 
+    else if (chineseZodiac == 6) {
         console.log("Horse");
-    } else if (chineseZodiac== 7) {
+    } 
+    else if (chineseZodiac== 7) {
         console.log("Goat");
-    } else if (chineseZodiac == 8) {
+    } 
+    else if (chineseZodiac == 8) {
         console.log("Monkey");
-    } else if (chineseZodiacIndex == 9) {
+    } 
+    else if (chineseZodiacIndex == 9) {
         console.log("Rooster");
-    } else if (chineseZodiacIndex == 10) {
+    } 
+    else if (chineseZodiacIndex == 10) {
         console.log("Dog");
-    } else if (chineseZodiacIndex == 11) {
+    } 
+    else if (chineseZodiacIndex == 11) {
         console.log("Pig");
-    } else {
+    } 
+    else {
         chineseZodiac = "You entered ivalid year"; 
     }
 
