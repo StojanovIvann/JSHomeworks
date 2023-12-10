@@ -37,7 +37,7 @@ console.log(`${parsedHumanYears} years in dog years is: ${convertInDogs} years`)
 // Note: Hardcode your account money in the program
 // Bonus: Make it work with prompt()!
 let cashOut=prompt("How much money do you want to cash out");
-let parsedCashOut=(parseFloat/(cashOut));
+let parsedCashOut=(parseFloat (cashOut));
 let balanceStatus = 230;
 let withdrawn =balanceStatus - parsedCashOut;
 function atm (withdrawn){
