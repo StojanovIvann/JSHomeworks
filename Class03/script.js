@@ -21,7 +21,7 @@ let inputTypeBoolean = checkInputType(false);
 // Write a JavaScript function that will return:
 // Calculates your dog's age based on the conversion rate of 1 human year to 7 dog years
 // Note: Call the function in console to see answer
-function conversationYears ( humanYears, dogYears){
+function conversationYears ( humanYears){
   let convertInDogs = humanYears* 7;
   return convertInDogs
 }
