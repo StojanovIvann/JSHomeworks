@@ -52,15 +52,25 @@ evenNum();
 console.log(" ");
 
 // Homework #5
-let minMaxArray = [2 ,5, 6 ,11 ,8]
-function sumMinMax(minMaxArray) {
-    let minNumber = Math.min(...minMaxArray);
-    let maxNumber = Math.max(...minMaxArray);
-    let  result = minNumber + maxNumber;
-    console.log(`MIN:${minNumber} MAX:${maxNumber} SUM:${result}`);
+// Ne znaev kako da ja resham so loop ova mi se vide najlesen nachin 
+
+function sumMinMax() {
+    let minMaxArray = [2 ,5, 6 ,11 ,8];
+    let min = minMaxArray[0];
+    let max = minMaxArray [0];
+    for (let i=0; i < minMaxArray.length; i++ ){
+        if(minMaxArray[i] > max){
+            max=minMaxArray[i];
+        }
+        else if(minMaxArray[i] < min){
+            min = minMaxArray[i];
+        }
+    }
+    let  result = min + max;
+    console.log(`MIN:${min} MAX:${max} SUM:${result}`);
 }
 
-sumMinMax(minMaxArray)
+sumMinMax()
 console.log(" ");
 
 // Homework #6
