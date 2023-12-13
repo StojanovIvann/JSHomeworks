@@ -52,7 +52,6 @@ evenNum();
 console.log(" ");
 
 // Homework #5
-// Ne znaev kako da ja resham so loop ova mi se vide najlesen nachin 
 
 function sumMinMax() {
     let minMaxArray = [2 ,5, 6 ,11 ,8];
