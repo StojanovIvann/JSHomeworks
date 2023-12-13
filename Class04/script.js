@@ -24,14 +24,14 @@ console.log(" ");
 
 // Homework #3
 let bigStringArray = ["Hello" , "there" , "students" , "of" , "SEDC" , "!"]
-function bigString (){
+function bigString (array){
     let string = "";
     for (let i=0; i< bigStringArray.length; i++){
         string += bigStringArray[i] + " ";
     }
     console.log(string)
 }
-bigString();
+bigString(bigStringArray);
 
 
 console.log(" ");
@@ -60,7 +60,7 @@ function sumMinMax(minMaxArray) {
     console.log(`MIN:${minNumber} MAX:${maxNumber} SUM:${result}`);
 }
 
-sumMinMax(minMaxArray )
+sumMinMax(minMaxArray)
 console.log(" ");
 
 // Homework #6
