@@ -6,7 +6,7 @@ function tellStory(array){
     console.log(`This is ${array[i]}, ${array[i]} is a nice person but today he is ${array[i+1]} because he is ${array[i+2]} all day.`)
 }
 
-let storyArray = ["Ivan", "sad", "writing his hoework"];
+let storyArray = ["Ivan", "sad", "doing his hoework"];
 let story =tellStory(storyArray);
 console.log(" ")
 
@@ -43,7 +43,7 @@ console.log(" ");
 
 // Homework #4
 function evenNum(){
-       for (let i = 0; i<=20; i++)
+       for (let i = 1; i<=20; i++)
         if (i % 2 === 0){
             console.log(`${i} ${i+1} \n `)
         }      
