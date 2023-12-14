@@ -3,12 +3,12 @@
 
 function tellStory(array){
     let i=0;
-    console.log(`This is ${array[i]}, ${array[i]} is a nice person but today he is ${array[i+1]} because he is ${array[i+2]} all day.`)
+    console.log(`This is ${array[i]}, ${array[i]} is a nice person but today he is ${array[i+1]} because he is ${array[i+2]} all day.`);
 }
 
 let storyArray = ["Ivan", "sad", "doing his hoework"];
 let story =tellStory(storyArray);
-console.log(" ")
+console.log(" ");
 
 
 // Homework #2
@@ -18,7 +18,7 @@ function sumNumbers(arrayOfNumbers){
     for (let i = 0; i < arrayOfNumbers.length; i++) { 
         sum += arrayOfNumbers[i]; 
     } 
-    return sum
+    return sum;
 }
 let numbersArray = [12, 23, 1, 10,];
 let sum = sumNumbers (numbersArray);
@@ -35,7 +35,7 @@ function bigString (stringArray){
     }
     console.log(string)
 }
-let bigStringArray = ["Hello" , "there" , "students" , "of" , "SEDC" , "!"]
+let bigStringArray = ["Hello" , "there" , "students" , "of" , "SEDC" , "!"];
 bigString(bigStringArray);
 
 
@@ -43,10 +43,11 @@ console.log(" ");
 
 // Homework #4
 function evenNum(){
-       for (let i = 1; i < 21; i++)
+       for (let i = 1; i < 21; i++){
         if (i % 2 === 0){
-            console.log(`${i-1} ${i}`)
+            console.log(`${i-1} ${i}`);
         }      
+    }
 }
 
 evenNum();
@@ -67,7 +68,7 @@ function sumMinMax(array) {
     }
       sum = min+max;
    }
-   return `MIN ${min} MAX:${max} SUM:${sum}`
+   return (`MIN: ${min} MAX:${max} SUM:${sum}`);
 }
 let minMaxArray = [2 ,5, 6 ,11 ,8];
 let sumNumber =sumMinMax(minMaxArray);
