@@ -1,36 +1,41 @@
+
 // Homework #1
-let storyArray = ["Ivan", "Happy", "playing"];
+
 function tellStory(array){
     let i=0;
-    console.log(`This is ${storyArray[i]}, he is ${storyArray[i+1]} because he is ${storyArray[i+2]} all day`);
+    console.log(`This is ${array[i]}, ${array[i]} is a nice person but today he is ${array[i+1]} because he is ${array[i+2]} all day.`)
 }
-tellStory(storyArray);
 
-console.log(" ");
+let storyArray = ["Ivan", "sad", "writing his hoework"];
+let story =tellStory(storyArray);
+console.log(" ")
+
 
 // Homework #2
-let numbersArray = [12, 23, 1, 10,];
+
 function sumNumbers(arrayOfNumbers){
     let sum = 0; 
-    for (let i = 0; i < numbersArray. length; i++) { 
-        sum += numbersArray[i]; 
+    for (let i = 0; i < arrayOfNumbers.length; i++) { 
+        sum += arrayOfNumbers[i]; 
     } 
-    console. log(`The result is :${sum}`);
+    return sum
 }
-
-sumNumbers (numbersArray);
-
+let numbersArray = [12, 23, 1, 10,];
+let sum = sumNumbers (numbersArray);
+console.log(sum);
 console.log(" ");
 
 // Homework #3
-let bigStringArray = ["Hello" , "there" , "students" , "of" , "SEDC" , "!"]
-function bigString (array){
+
+function bigString (stringArray){
+    
     let string = "";
-    for (let i=0; i< bigStringArray.length; i++){
-        string += bigStringArray[i] + " ";
+    for (let i=0; i< stringArray.length; i++){
+        string += stringArray[i] + " ";
     }
     console.log(string)
 }
+let bigStringArray = ["Hello" , "there" , "students" , "of" , "SEDC" , "!"]
 bigString(bigStringArray);
 
 
@@ -40,12 +45,8 @@ console.log(" ");
 function evenNum(){
        for (let i = 0; i<=20; i++)
         if (i % 2 === 0){
-            console.log(`${i}  \n  `)
-        }
-        else{
-            console.log(`${i} " " `)
-        }
-       
+            console.log(`${i} ${i+1} \n `)
+        }      
 }
 
 evenNum();
@@ -53,39 +54,41 @@ console.log(" ");
 
 // Homework #5
 
-function sumMinMax() {
-    let minMaxArray = [2 ,5, 6 ,11 ,8];
-    let min = minMaxArray[0];
-    let max = minMaxArray [0];
-    for (let i=0; i < minMaxArray.length; i++ ){
-        if(minMaxArray[i] > max){
-            max=minMaxArray[i];
-        }
-        else if(minMaxArray[i] < min){
-            min = minMaxArray[i];
-        }
+function sumMinMax(array) {
+    
+    max = minMaxArray[0];
+    min = minMaxArray [0];
+   for (let i=0; i < array.length; i++){
+    if (array[i] > max){
+        max = array[i];
     }
-    let  result = min + max;
-    console.log(`MIN:${min} MAX:${max} SUM:${result}`);
+    else if (array[i] < min){
+        min=array[i]
+    }
+      sum = min+max;
+   }
+   return `MIN ${min} MAX:${max} SUM:${sum}`
 }
-
-sumMinMax()
-console.log(" ");
+let minMaxArray = [2 ,5, 6 ,11 ,8];
+let sumNumber =sumMinMax(minMaxArray);
+console.log(sumNumber);
 
 // Homework #6
 
-let firstNameArray = ["Bob", "Jill"];
-let lastNameArray = ["Gregory", "Wurtz"];
+
+
 function fullNames(firstName, lastName) {
     let fullNames = [];
-    for ( i = 0; i < firstNameArray.length; i++) {
-      const fullName = `${i + 1} ${firstNameArray[i]} ${lastNameArray[i]}`;
+    for ( i = 0; i < firstName.length; i++) {
+      const fullName = `${i + 1} ${firstName[i]} ${lastName[i]}`;
       fullNames.push(fullName);
     }
   
     return fullNames;
   }
   
+  let firstNameArray = ["Bob", "Jill"];
+  let lastNameArray = ["Gregory", "Wurtz"];
   
   let finalResult = fullNames(firstNameArray, lastNameArray);
   console.log(finalResult);
