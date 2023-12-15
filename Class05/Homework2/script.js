@@ -5,7 +5,7 @@ let mainDiv = document.getElementById('mainDiv');
 let ul = document.createElement('ul')
 mainDiv.append(ul);
 let sum = 0;
-let p = document.createElement('p');
+let result = document.createElement('p');
 for (let i=0; i < arrayOfNumbers.length; i++){
     let li = document.createElement('li')
     ul.append(li);
@@ -13,5 +13,5 @@ for (let i=0; i < arrayOfNumbers.length; i++){
     sum += arrayOfNumbers[i];
 
 }
-p.innerText =`The sum of the array is :${sum}`;
-mainDiv.append(p);
+result.innerText =`The sum of the array is :${sum}`;
+mainDiv.append(result);
