@@ -1,0 +1,24 @@
+.mainDiv{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+}
+input{
+    border: 2px;
+    background-color: aliceblue;
+    padding: 12px;
+}
+
+#btn{
+    background-color: aliceblue;
+    padding: 12px;
+}
+#tableContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+}
+

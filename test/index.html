@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Table</title>
+</head>
+<body>
+
+  <input type="text" id="rows" placeholder="Enter number of rows:" required>
+  <input type="text" id="columns" placeholder="Enter number of columns:" required>
+  <button id="btn">SUBMIT</button>
+
+  <div id="mainContainer"></div>
+  
+  <script>
+    let btn = document.getElementById('btn');
+    let main = document.getElementById('mainContainer');
+
+    btn.addEventListener('click', function createTable() {
+        let columns = parseInt(document.getElementById('columns').value);
+        let rows = parseInt(document.getElementById('rows').value);
+
+        // Validation to ensure rows and columns are valid numbers
+        if (isNaN(columns) || isNaN(rows) || columns <= 0 || rows <= 0) {
+            alert('Please enter valid numbers for rows and columns.');
+            return;
+        }
+
+        let table = document.createElement('table');
+
+        for (let i = 0; i < rows; i++) {
+            let tr = document.createElement('tr');
+
+            for (let j = 0; j < columns; j++) {
+                let td = document.createElement('td');
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        main.innerHTML = '';
+        main.appendChild(table);
+    });
+  </script>
+</body>
+</html>
