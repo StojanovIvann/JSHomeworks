@@ -10,11 +10,11 @@ btn.addEventListener('click', function createTable(){
     if ((rows !== NaN) && (columns !==NaN)){
     
     for (let i = 0; i < rows; i++) {
-      table += `<tr>   </tr>`;
+      table += `<tr></tr>`;
   
 
       for (let j = 0; j < columns; j++) {
-        table += `<td style = "padding:30px" > Row ${i + 1} Column ${j + 1} </td>`;
+        table += `<td style = "padding:30px" > Row ${i + 1} , Column ${j + 1} </td>`;
         
       }
       
