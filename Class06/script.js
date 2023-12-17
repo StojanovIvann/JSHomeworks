@@ -5,8 +5,8 @@ btn.addEventListener('click', function createTable(){
     let rows = parseInt(document.getElementById('rows').value);
     let columns = parseInt(document.getElementById('columns').value);
     let table = '<table class="table" border="1px">';
-    let text = " ";
 
+    
     if ((rows !== NaN) && (columns !==NaN)){
     
     for (let i = 0; i < rows; i++) {
