@@ -14,6 +14,13 @@ input{
 #btn{
     background-color: aliceblue;
     padding: 12px;
+    border: transparent;
+}
+
+#btn:hover{
+    background-color: black;
+    color: whitesmoke;
+ 
 }
 #tableContainer{
     display: flex;

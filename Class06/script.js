@@ -10,7 +10,7 @@ btn.addEventListener('click', function createTable(){
     if ((rows !== NaN) && (columns !==NaN)){
     
     for (let i = 0; i < rows; i++) {
-      table += `<tr></tr>`;
+      table += `<tr> </tr>`;
   
 
       for (let j = 0; j < columns; j++) {
