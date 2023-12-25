@@ -73,12 +73,39 @@ submitButton.addEventListener("click", function () {
 });
 
 
+let btnPrintOne = document.getElementById('printOneButton');
+
+function printOne (exercise, inputNumberOfExercise){
+  value = Object.values(exercise);
+  if (isNaN(inputNumberOfExercise.value)){
+    alert("please enter a number!!");
+}
+
+
+else if (inputNumberOfExercise.value < 0){
+    alert('error, you entered a negative number');
+}
+
+else if (inputNumberOfExercise.value > Object.values(exercise) .length ){
+    alert('too much excercises, give the students some time to learn!!');
+}
+else{
+  for(let i = 0 ; i < inputNumberOfExercise.value; i++){
+    container.innerHTML = `Vezba ${i+1} : ${value[i]}`;
+  }   
+}
+}
+
+btnPrintOne.addEventListener('click', function(){
+  printOne(vezbi, numOfExcercises);
+})
 
 
 colorButton.style.backgroundColor =' gray';
 colorButton.style.color = 'white';
 clearButton.style.backgroundColor = 'cyan';
 submitButton.style.backgroundColor = 'yellowgreen';
+
 
 
 function changeTheme (button){
@@ -98,22 +125,3 @@ function changeTheme (button){
 colorButton.addEventListener('click', function(){
      changeTheme(colorButton);
 })
-
-
-
-
-
-
-//FOR HOMEWORK!!!!!!!!!!!!
-//1.TRY Extending our application so it has a other HTML elements and logic in JS that will giv us just a given excercise(also handle errors if there is no such exercise in our object)
-
-//2 Try to make a validation in the function that will handle errors if we put more excercises for showing and we dont have that much in our object, we want an alert to be shown for it that will print "too much excercises, give the students some time to learn!!". Same can be for negative number aswell ass for strings
-
-//3. Add some dynamic style to our elements, but do it in JS!
-
-//-----------------FOR THE BOLDEST!----------------
-
-//4. Try Change the theme of the main view so the background is black and the text is white - Do this via a button and if you click the button, the theme should reset and be in its original white screen and black text colour
-
-// Remember to NOOOOOOOOOOTTTT use google or something similar, think for yourself and see references from our previous material and presentations!!!
-
