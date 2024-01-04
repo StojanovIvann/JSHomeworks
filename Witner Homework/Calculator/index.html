@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+            <div id="inputOne"></div>
+            <div id="inputTwo"></div>
+            <div id="buttons">
+                <button type="button" id="clearButton" value="c" onclick="clearScreen()">C</button>
+                <button type="button" id="deleteButton" value="d">D</button>
+                <button type="button" class="operatorButton" value="dv" onclick="operation('/')">DV</button>
+
+
+                <button type="button" class="digitButton" value="7" onclick="printNumber(7)">7</button>
+                <button type="button" class="digitButton" value="8"  onclick="printNumber(8)">8</button>
+                <button type="button" class="digitButton" value="9"  onclick="printNumber(9)">9</button>
+                <button type="button" class="operatorButton" value="x" onclick="operation('x')">x</button>
+
+
+                <button type="button" class="digitButton" value="4" onclick="printNumber(4)">4</button>
+                <button type="button" class="digitButton" value="5" onclick="printNumber(5)">5</button>
+                <button type="button" class="digitButton" value="6" onclick="printNumber(6)">6</button>
+                <button type="button" class="operatorButton" value="-" onclick="operation('-')">-</button>
+
+
+                <button type="button" class="digitButton" value="1" onclick="printNumber(1)">1</button>
+                <button type="button" class="digitButton" value="2" onclick="printNumber(2)">2</button>
+                <button type="button" class="digitButton" value="3" onclick="printNumber(3)">3</button>
+                <button type="button" class="operatorButton" value="+" onclick="operation('+')">+</button>
+
+                <button type="button" id="dotButton" value="dot" onclick="printNumber('.')">.</button>
+                <button type="button" class="digitButton" id="buttonZero" value="0" onclick="printNumber(0)">0</button>
+                <button type="button" id="equalButton" value="eq">=</button>
+            </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

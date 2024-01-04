@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color:rgb(168, 217, 70) ;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+#headers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h2{
+    margin-top:-10px;
+}
+#alphabetDiv{
+    justify-content: center;
+}
+.alphabetButton{
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    background-color: #b4d182;
+    border: 1px solid white;
+    color: white;
+    border-radius: 12px;
+}
+.alphabetButton:hover{
+    background-color: rgb(84, 196, 177);
+}
+
+#clueDiv{
+    width: 300px;
+    height: 100px;
+    border: 1px  dashed white;
+}
