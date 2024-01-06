@@ -10,7 +10,7 @@ body{
     height: 608px;
     border: 1px solid white;
     border-radius: 20px;
-    background-color: DimGray;
+    background-color: rgb(99, 105, 117)
 }
 button{
     width: 100px;

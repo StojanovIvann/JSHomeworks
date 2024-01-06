@@ -1,39 +1,78 @@
-body{
-    display: flex;
-    justify-content: center;
-    background-color:rgb(168, 217, 70) ;
-    color: white;
-    flex-direction: column;
-    align-items: center;
-}
 
+body{
+    background-color: seagreen;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
 #headers{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-h2{
-    margin-top:-10px;
+.headerSecond{
+    margin-top: -20px;
 }
-#alphabetDiv{
-    justify-content: center;
-}
-.alphabetButton{
+button{
     width: 50px;
     height: 50px;
-    margin: 2px;
-    background-color: #b4d182;
+    color:  seagreen;
+    background-color: white;
     border: 1px solid white;
+    margin: 2px;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: rgb(186, 238, 81) ;
+    color: white;;
+}
+#clue{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-self: center;
+}
+#clueHeader{
+    align-self: center;
+}
+#clueBox{
+    border: 1px dashed white;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+#buttons{
+    align-self: center;
+}
+#hintAndRestart{
+    display: flex;
+    align-self: center;
+    margin-top: 10px;
+}
+#hint, #restart{
+    width: 100px;
+    background-color: transparent;
     color: white;
-    border-radius: 12px;
+    border: 1px dashed white;
 }
-.alphabetButton:hover{
-    background-color: rgb(84, 196, 177);
+#finalWord{
+    align-self: center;
 }
+#category{
+    align-self: center;
+    display: flex;
 
-#clueDiv{
-    width: 300px;
-    height: 100px;
-    border: 1px  dashed white;
+}
+#lives{
+    align-self: center;
+}
+#displayClue{
+    align-self: center;
+}
+#space{
+    width: 100px;
 }

@@ -1,6 +1,5 @@
 let inputOne = document.getElementById('inputOne');
 let inputTwo = document.getElementById('inputTwo');
-let clear = document.getElementById('clearButton');
 let equal = document.getElementById('equalButton');
 let goBack = document.getElementById('deleteButton')
 
@@ -8,22 +7,23 @@ let numOne = '';
 let numTwo = '';
 let currentOperator = '';
 
-
 function clearScreen() {
     inputOne.innerText = '';
     inputTwo.innerText = '';    
      currentOperator = '';
      numOne = ' ';
      numTwo = ' ';
-
 };
 
-clear.addEventListener('click', function(){
-    clearScreen();
-});
-
 function deleteOneInput (){
-    
+    if(!currentOperator){
+        numOne = numOne.slice(0,-1);
+        inputOne.innerText=numOne;
+    }
+    else{
+        numTwo=numTwo.slice(0,-1);
+        inputTwo.innerText=numTwo;
+    }
 };
 
 goBack.addEventListener('click', function(){
@@ -91,7 +91,7 @@ function operation(operator) {
             inputOne.innerText = '';
             numOne = result;
             numTwo = '';
-            currentOperator = '';
+            currentOperator = operator;
     }
 
     else {
