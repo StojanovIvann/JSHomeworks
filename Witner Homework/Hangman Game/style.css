@@ -47,6 +47,7 @@ button:hover{
 }
 #buttons{
     align-self: center;
+    width: 750px;
 }
 #hintAndRestart{
     display: flex;
@@ -72,7 +73,4 @@ button:hover{
 }
 #displayClue{
     align-self: center;
-}
-#space{
-    width: 100px;
 }

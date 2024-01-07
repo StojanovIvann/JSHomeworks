@@ -11,7 +11,7 @@ let clue = document.getElementById('displayClue');
 
 
 let remainigLives = 10;
-let guess = ' ';
+let currentWord;
 const category = [
     'Moovies',
     'Football',
@@ -22,9 +22,9 @@ const category = [
 const words= [
     'SPIDERMAN',
     'RONALDO',
-    'BLUZZ',
+    'TECHNO',
     'BANANA',
-    'JAVA SCRIPT'
+    'PYTHON'
 ]
 
 const clues = [ 
@@ -32,72 +32,81 @@ const clues = [
     'The GOAT',
     'Type of music',
     'Monkey',
-    'This program is made with'
+    'Snake'
 ]
-
-function space(){
-    finalWord.innerText += " ";
-}
 function lives(){
-   livesDiv.innerHTML=` <h3> You Have ${remainigLives} Lives Remaing  </h3>`
+   livesDiv.innerHTML=` <h3> You Have ${remainigLives} Lives Remaining  </h3>`
 }
+
 lives()
+
 function chosenCategory(){
     let chosenCategory = category[Math.floor(Math.random() * category.length)]
     categoryDiv.innerText =  chosenCategory
 }
 
 chosenCategory();
-function printLetter(letter) {
+
+
+function choseWord() {
     let index;
-    let currentWord;
+    if (categoryDiv.innerText === "Moovies") {
+        finalWord.innerText = '_ _ _ _ _ _ _ _ _';
+        index = 0;
+        currentWord = words[index];
+    } 
+    else if (categoryDiv.innerText === "Football") {
+        finalWord.innerText = '_ _ _ _ _ _ _'
+        index = 1;
+        currentWord = words[index];
+    } 
+    else if (categoryDiv.innerText === "Music") {
+        finalWord.innerText = '_ _ _ _ _ _'
+        index = 2;
+        currentWord = words[index];
+    } 
+    else if (categoryDiv.innerText === "Fruits") {
+        finalWord.innerText = '_ _ _ _ _ _'
+        index = 3;
+        currentWord = words[index];
+    } 
+    else if (categoryDiv.innerText === "Programing Languages") {
+        finalWord.innerText = '_ _ _ _ _ _'
+        index = 4;
+        currentWord = words[index];
+    } 
 
-    switch (categoryDiv.innerText) {
-        case "Moovies":
-            index = 0;
-            currentWord = words[index];
-            break;
-        case "Football":
-            index = 1;
-            currentWord = words[index];
-            break;
-        case "Music":
-            index = 2;
-            currentWord = words[index];
-            break;
-        case "Fruits":
-            index = 3;
-            currentWord = words[index];
-            break;
-        case "Programing Languages":
-            index = 4;
-            currentWord = words[index];
-            break;
-        default:
-            // Handle other categories or throw an error
-            break;
-    }
-
+}
+choseWord()
+ function printLetter(letter){
     if (currentWord.includes(letter)) {
         for (let i = 0; i < currentWord.length; i++) {
             if (currentWord[i] === letter) {
-                finalWord.innerText = finalWord.innerText.slice(0, i) + letter + finalWord.innerText.slice(i + 1);
+                finalWord.innerText = `${finalWord.innerText.slice(0, i * 2)}${letter} ${finalWord.innerText.slice((i * 2) + 2)}`;
             }
-        }
-
-        if (finalWord.innerText === currentWord) {
-            hangBox.innerHTML = `<h1> You win </h1>`;
-        }
-    } else {
-        console.log('lost');
-        livesDiv.innerHTML = `<h3> You Have ${remainigLives--} Lives Remaining </h3>`;
-        if (remainigLives === 0) {
-            hangBox.innerHTML = `<h1> You Lost </h1>`;
         }
     }
 }
+
+function gameStatus(){
+    for(let i = 0; i < words.length; i++){
+        if ((finalWord.innerText === words[i]) && remainigLives > 0) {
+            hangBox.innerHTML = `<h1> You win </h1>`;
+        }
     
-    function getAClue(){
+        else {
+        console.log('lost');
+        livesDiv.innerHTML = `<h3> You Have ${remainigLives-1} Lives Remaining </h3>`;
+        if (remainigLives === 0 || remainigLives < 0) {
+            remainigLives = 0;
+            hangBox.innerHTML = `<h1> You Lost </h1>`;
+        }
+    }
+    }
+}
+gameStatus();
+    
+ function getAClue(){
     if(clue.innerText == ''){
         if(categoryDiv.innerText === "Moovies"){
             clue.innerText += ` ${clues[0]}`
@@ -127,4 +136,7 @@ restart.addEventListener('click',function(){
     clue.innerText = '';
     remainigLives = 10;
     finalWord.innerText = ' ';
+    printLetter();
+    choseWord();
+    gameStatus();
 })
