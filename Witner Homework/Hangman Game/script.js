@@ -7,6 +7,9 @@ let categoryDiv = document.getElementById('categoryHeader');
 let finalWord = document.getElementById('finalWord');
 let hangBox = document.getElementById('clueBox')
 let clue = document.getElementById('displayClue');
+let gameOver = document.getElementById('gameOver');
+gameOver.id='hidden';
+gameOver.innerHTML = ' ';
 
 
 
@@ -17,22 +20,25 @@ const category = [
     'Football',
     'Music',
     'Fruits',
-    'Programing Languages'
+    'Programing Languages',
+    "DRINKS"
 ];
 const words= [
     'SPIDERMAN',
-    'RONALDO',
+    'BARCELONA',
     'TECHNO',
     'BANANA',
-    'PYTHON'
+    'PYTHON',
+    'COFFE'
 ]
 
 const clues = [ 
     'Superhero moovie',
-    'The GOAT',
+    'Winner of the LaLiga',
     'Type of music',
     'Monkey',
-    'Snake'
+    'Snake',
+    'When you wake up, you drink?'
 ]
 function lives(){
    livesDiv.innerHTML=` <h3> You Have ${remainigLives} Lives Remaining  </h3>`
@@ -56,7 +62,7 @@ function choseWord() {
         currentWord = words[index];
     } 
     else if (categoryDiv.innerText === "Football") {
-        finalWord.innerText = '_ _ _ _ _ _ _'
+        finalWord.innerText = '_ _ _ _ _ _ _ _ _'
         index = 1;
         currentWord = words[index];
     } 
@@ -75,6 +81,12 @@ function choseWord() {
         index = 4;
         currentWord = words[index];
     } 
+    else if(categoryDiv.innerText ===  "Drinks"){
+        finalWord.innerText =`_ _ _ _ _ `
+        index = 5
+        currentWord = words[index];
+
+    }
 
 }
 choseWord()
@@ -82,28 +94,32 @@ choseWord()
     if (currentWord.includes(letter)) {
         for (let i = 0; i < currentWord.length; i++) {
             if (currentWord[i] === letter) {
-                finalWord.innerText = `${finalWord.innerText.slice(0, i * 2)}${letter} ${finalWord.innerText.slice((i * 2) + 2)}`;
+                finalWord.innerText= `${finalWord.innerText.slice(0, i * 2)}${letter} ${finalWord.innerText.slice((i * 2) + 2)}`;
+                remainigLives = 10;
+                }
+            }
+        }
+        gameStatus()  
+    }
+
+
+function gameStatus(){
+     livesDiv.innerHTML = `<h3> You Have ${remainigLives--} Lives Remaining </h3>`;
+        if (remainigLives === -1 || remainigLives < 0) {
+            remainigLives = 0;
+            hangBox.innerHTML = `<h1> You Lost </h1>`;
+            gameOver.id ='gameOver';
+            gameOver.innerHTML+= `<h1>You Lost</h1>`
+            gameOver.innerHTML += ` <img src="../hangmancrop.jpg" alt=""> `
+            gameOver.innerHTML += ` <button class = "gameOverButton" onclick="restartGame()">Play Again </button>`
+        }
+        for(let i = 0; i < words.length; i++){
+            if(!finalWord.innerText.includes('_')){
+                hangBox.innerHTML = `<h1>You Won </h1>`
             }
         }
     }
-}
-
-function gameStatus(){
-    for(let i = 0; i < words.length; i++){
-        if ((finalWord.innerText === words[i]) && remainigLives > 0) {
-            hangBox.innerHTML = `<h1> You win </h1>`;
-        }
     
-        else {
-        console.log('lost');
-        livesDiv.innerHTML = `<h3> You Have ${remainigLives-1} Lives Remaining </h3>`;
-        if (remainigLives === 0 || remainigLives < 0) {
-            remainigLives = 0;
-            hangBox.innerHTML = `<h1> You Lost </h1>`;
-        }
-    }
-    }
-}
 gameStatus();
     
  function getAClue(){
@@ -123,20 +139,27 @@ gameStatus();
         else if(categoryDiv.innerText === "Programing Languages"){
             clue.innerText += `${clues[4]}`
         }
+        else{
+            clue.innerText += `${clues[5]}`
+        }
     }
    
 }
 hint.addEventListener('click', function(){
     getAClue();
 })
-
-restart.addEventListener('click',function(){
-    hangBox.innerHTML = ' ';
+function restartGame(){
+    gameOver.id='hidden';
+    gameOver.innerHTML = ' ';
     chosenCategory();
     clue.innerText = '';
-    remainigLives = 10;
+    remainigLives = 11;
     finalWord.innerText = ' ';
     printLetter();
     choseWord();
     gameStatus();
+    hangBox.innerHTML = ' ';
+}
+restart.addEventListener('click',function(){
+   restartGame()
 })

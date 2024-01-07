@@ -1,10 +1,23 @@
 
 body{
-    background-color: seagreen;
     color: white;
     display: flex;
-    flex-direction: column;
     justify-content:center;
+    background: radial-gradient(circle at center, 
+    cyan, rgb(154, 196, 252), blue),100% ;
+
+}
+.hangman{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 1200px;
+    height: 850px;
+    background: radial-gradient(circle at center, 
+    cyan, rgb(114, 135, 250), rgb(95, 132, 255)),100% ;
+    margin-top: 50px;
+    border-radius: 50px;
+    box-shadow: 10px 10px rgb(69, 100, 202);
 }
 #headers{
     display: flex;
@@ -13,20 +26,21 @@ body{
     flex-direction: column;
 }
 .headerSecond{
-    margin-top: -20px;
+    margin-top: -15px;
 }
 button{
     width: 50px;
     height: 50px;
-    color:  seagreen;
+    color:  black;
     background-color: white;
     border: 1px solid white;
     margin: 2px;
     border-radius: 10px;
 }
 button:hover{
-    background-color: rgb(186, 238, 81) ;
-    color: white;;
+    background: radial-gradient(
+    rgb(148, 255, 255), rgb(125, 114, 224), rgb(57, 255, 255)),100% ;
+    color: black;
 }
 #clue{
     display: flex;
@@ -60,8 +74,22 @@ button:hover{
     color: white;
     border: 1px dashed white;
 }
+ #restart:hover{
+    background: radial-gradient(
+        rgb(229, 255, 255), rgb(180, 186, 219), rgb(178, 188, 206)),100% ;
+        color: white;;
+        color: black;
+}
+#hint:hover{
+    background: radial-gradient(
+        rgb(229, 255, 255), rgb(180, 186, 219), rgb(178, 188, 206)),100% ;
+        color: white;;
+        color: black;
+}
 #finalWord{
     align-self: center;
+    color: rgb(31, 54, 75);
+    text-shadow: 1px 1px blue;
 }
 #category{
     align-self: center;
@@ -73,4 +101,39 @@ button:hover{
 }
 #displayClue{
     align-self: center;
+}
+#finalWord{
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 40px;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    font-size: 2rem;
+}
+
+#gameOver{  
+    position: absolute;
+    width: 1100px;
+    height: 790px;
+    border: 1px solid transparent;
+    margin-top: 110px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(22, 39, 124);
+    background: radial-gradient(
+        white, rgb(255, 255, 255), rgb(69, 48, 255)),100%;
+        border-radius: 790px;
+}
+img{
+    height: 500px;
+    width: 400px;
+}
+.gameOverButton{
+    width: 200px;
+    background-color: gray;
+    
 }
