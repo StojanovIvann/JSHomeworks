@@ -21,7 +21,7 @@ const category = [
     'Music',
     'Fruits',
     'Programing Languages',
-    "DRINKS"
+    "Drinks"
 ];
 const words= [
     'SPIDERMAN',
