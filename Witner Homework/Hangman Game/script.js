@@ -93,7 +93,7 @@ getAWord()
 
 
 function gameStatus(){
-
+// Ovde imav bug. Mi davase - Lives  zatoe imam remainingLives =0 i vo if imam ako e - 1
         if (remainigLives === -1 || remainigLives < 0) {
             remainigLives = 0;
             hangBox.innerHTML = `<h1> You Lost </h1>`;
