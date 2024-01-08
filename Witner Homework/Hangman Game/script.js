@@ -167,7 +167,7 @@ function restartGame(){
     gameOver.innerHTML = ' ';
     chosenCategory();
     clue.innerText = '';
-    remainigLives = 11;
+    remainigLives = 10;
     finalWord.innerText = ' ';
     printLetter();
     choseWord();
