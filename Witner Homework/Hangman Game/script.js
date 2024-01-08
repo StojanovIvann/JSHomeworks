@@ -23,10 +23,6 @@ const category = [
     "Drinks"
 ];
     let words= [];
-
-let clues = [ 
-
-]
 function lives(){
    livesDiv.innerHTML=` <h2> You Have ${remainigLives} Lives</h2>`
 }
