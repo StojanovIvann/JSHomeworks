@@ -18,7 +18,7 @@ let chosenWord;
 const category = [
     'Moovies',
     'Football',
-    'Music',
+    'Brands',
     'Fruits',
     "Drinks"
 ];
@@ -34,36 +34,34 @@ function lives(){
 lives()
 
 // Get a random category
-function chosenCategory(){
+function getACategory(){
     let chosenCategory = category[Math.floor(Math.random() * category.length)]
     //Bidejki Math.random() * category.length ni vraka random decimalen broj od 0 do 1,  go upotrebiv Math.floor() za da go zaokruzi rezultatot od Math.random() * category.length vo cel broj 
     // Na primer Math.random ako ni vrati 0.123 * dolzinata na nizata, Math.floor() ke go zaokruzi rezultatot  vo cel broj i ke ni vrati random element od nizata koj e najblisku do rezlutatot od Math.floor(Math.random() * category.length)
     categoryDiv.innerText =  chosenCategory
 }
 
-chosenCategory();
+getACategory();
 
 // Get the word  from the appropriate category
 
-function choseWord() {
+function getAWord() {
     let chosenCategory = categoryDiv.innerText;
 
     if (chosenCategory === 'Moovies') {
         words = ['SUPERMAN', 'BATMAN', 'THOR'];
     } 
     else if (chosenCategory === 'Football') {
-        words = ['BARCELONA', 'MANCHESTER', 'LIVERPOOL'];
+        words = ['RONALDO', 'MESSI', 'BELLINGHAM'];
     } 
-    else if (chosenCategory === 'Music') {
-       
-        words = ['TECHNO', 'ROCK', 'FOLK'];
+    else if (chosenCategory === 'Brands') {
+        words = ['NIKE', 'REEBOK', 'KAPPA'];
     } 
     else if (chosenCategory === 'Fruits') {
-        words = ['PAPAYA', 'MANGO', 'ORANGE'];
-        clue=['Tropical fruit']
+        words = ['PAPAYA', 'MANGO', 'PINEAPPLE'];
     } 
     else if (chosenCategory === 'Drinks') {
-        words = ['COFFEE', 'TEA', 'JUICE'];
+        words = ['COFFEE', 'WATER', 'JUICE'];
     }
     let randomWord = Math.floor(Math.random() * words.length);
     chosenWord = words[randomWord];
@@ -76,7 +74,7 @@ function choseWord() {
        }
    }
 }
-choseWord()
+getAWord()
 // Prin the letter on the screen
  function printLetter(letter){
     if (chosenWord.includes(letter)) {
@@ -85,9 +83,8 @@ choseWord()
                 finalWord.innerText= `${finalWord.innerText.slice(0, i * 2)}${letter} ${finalWord.innerText.slice((i * 2) + 2)}`;
                 //  slice funkcijata mi raboti taka sto pocnuva od 0to mesto i odi 2 prazni mesta napred,  odnosno edno prazno mesto i crtickata 
                 // ja dodava bukvata na soodvetnata crticka
-                // se mnozi so 2 bidejki imame  "_ _ _" odnosno megu sekoja crta imame edno prazno mesto, zatoa praznoto mesto + crtickata se 2 mesta
-                // i potoa so ((i*2) + 2 ) se prefrluvame na sledniot znak, gi izvrtuva prvite 2 prazni mesta i plus dodava uste 2, odnosno gi ispolnuva  praznite mesta taka se dodeka  ne se prebrisat site "_"  od funkcijata gameStatus();
-                
+                // se mnozi so 2 bidejki imame  "_ _ " odnosno megu sekoja crta imame edno prazno mesto, zatoa praznoto mesto + crtickata se 2 mesta
+                // i potoa so ((i*2) + 2 ) se prefrluvame na sledniot znak, gi izvrtuva prvite 2  mesta i plus dodava uste 2 mesta,
                 }
             }
         }
@@ -113,33 +110,34 @@ function gameStatus(){
             else if(!finalWord.innerText.includes('_')){
                 hangBox.innerHTML = `<h1>YOU WON!!!! </h1>`
             }
+
     }
     
 gameStatus();
     // Get a clueget a word from the appropriate category
  function getAClue(){
-    let chosenCategory = categoryDiv.innerText;
-    if (chosenCategory === 'Moovies') {
-        clues=['Tropical fruit']
-        clue.innerText += clues[0]
-    } 
-    else if (chosenCategory === 'Football') {
-        clues=['Tropical fruit']
-        clue.innerText += clues[0]
-    } 
-    else if (chosenCategory === 'Music') {
-       
-        clues=['Tropical fruit']
-        clue.innerText += clues[0]
-    } 
-    else if (chosenCategory === 'Fruits') {
-        clues=['Tropical fruit']
-        clue.innerText += clues[0]
-    } 
-    else if (chosenCategory === 'Drinks') {
-        clues=['Tropical fruit']
-        clue.innerText += clues[0]
+    if(clue.innerText =" "){
+        let chosenCategory = categoryDiv.innerText;
+        if (chosenCategory === 'Moovies') {
+            clue.innerText += `Superhero Moovie`;
+        } 
+        else if (chosenCategory === 'Football') {
+            clue.innerText += `Most popular footballers`;
+        } 
+        else if (chosenCategory === 'Brands') {
+            clue.innerText +=   `Spots cloathing brand'`;
+        } 
+        else if (chosenCategory === 'Fruits') {
+            clue.innerText += 'Tropical fruit';
+        } 
+        else if (chosenCategory === 'Drinks') {
+            clue.innerText += 'Non alcoholic drinks, you drink it every day';
+        }
     }
+    else{
+        clue.innerText += ' ';
+    }
+   
     }
    
 hint.addEventListener('click', function(){
@@ -148,12 +146,12 @@ hint.addEventListener('click', function(){
 function restartGame(){
     gameOver.id='hidden';
     gameOver.innerHTML = ' ';
-    chosenCategory();
+    getACategory();
     clue.innerText = '';
     remainigLives = 10;
     finalWord.innerText = ' ';
     printLetter();
-    choseWord();
+    getAWord();
     gameStatus();
     hangBox.innerHTML = ' ';
 }
