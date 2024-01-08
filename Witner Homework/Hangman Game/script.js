@@ -77,7 +77,6 @@ getAWord()
                 finalWord.innerText= `${finalWord.innerText.slice(0, i * 2)}${letter} ${finalWord.innerText.slice((i * 2) + 2)}`;
                 //  slice funkcijata mi raboti taka sto pocnuva od 0to mesto i odi 2 prazni mesta napred,  odnosno edno prazno mesto i crtickata 
                 // ja dodava bukvata na soodvetnata crticka
-                // se mnozi so 2 bidejki imame  "_ _ " odnosno megu sekoja crta imame edno prazno mesto, zatoa praznoto mesto + crtickata se 2 mesta
                 // i potoa so ((i*2) + 2 ) se prefrluvame na sledniot znak, gi izvrtuva prvite 2  mesta i plus dodava uste 2 mesta,
                 }
             }
