@@ -16,13 +16,17 @@ function clearScreen() {
 };
 
 function deleteOneInput (){
-    if(!currentOperator){
+    let result;
+    if(!currentOperator && numOne ){
         numOne = numOne.slice(0,-1);
+        // odzema edna cifra od numOne
         inputOne.innerText=numOne;
     }
     else{
         numTwo=numTwo.slice(0,-1);
         inputTwo.innerText=numTwo;
+         // odzema edna cifra od numOne
+
     }
 };
 
