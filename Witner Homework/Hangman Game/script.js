@@ -31,9 +31,7 @@ lives()
 
 // Get a random category
 function getACategory(){
-    let chosenCategory = category[Math.floor(Math.random() * category.length)]
-    //Bidejki Math.random() * category.length ni vraka random decimalen broj od 0 do 1,  go upotrebiv Math.floor() za da go zaokruzi rezultatot od Math.random() * category.length vo cel broj 
-    // Na primer Math.random ako ni vrati 0.123 * dolzinata na nizata, Math.floor() ke go zaokruzi rezultatot  vo cel broj i ke ni vrati random element od nizata koj e najblisku do rezlutatot od Math.floor(Math.random() * category.length)
+    let chosenCategory = category[Math.round(Math.random() * category.length)]
     categoryDiv.innerText =  chosenCategory
 }
 
