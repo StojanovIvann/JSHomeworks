@@ -14,31 +14,18 @@ gameOver.innerHTML = ' ';
 
 
 let remainigLives = 10;
-let currentWord;
+let chosenWord;
 const category = [
     'Moovies',
     'Football',
     'Music',
     'Fruits',
-    'Programing Languages',
     "Drinks"
 ];
-const words= [
-    'SPIDERMAN',
-    'BARCELONA',
-    'TECHNO',
-    'BANANA',
-    'PYTHON',
-    'COFFE'
-]
+    let words= [];
 
-const clues = [ 
-    'Superhero moovie',
-    'Winner of the LaLiga',
-    'Electronic dance music!',
-    'The monkey loves is!',
-    'Snake',
-    'When you wake up, you drink?'
+let clues = [ 
+
 ]
 function lives(){
    livesDiv.innerHTML=` <h2> You Have ${remainigLives} Lives</h2>`
@@ -59,47 +46,42 @@ chosenCategory();
 // Get the word  from the appropriate category
 
 function choseWord() {
-    let i = 0;
-    // i++;
-    if (categoryDiv.innerText === "Moovies") {
-        finalWord.innerText = '_ _ _ _ _ _ _ _ _';
-        i = 0;
-        currentWord = words[i];
-    } 
-    else if (categoryDiv.innerText === "Football") {
-        finalWord.innerText = '_ _ _ _ _ _ _ _ _'
-        i = 1;
-        currentWord = words[i];
-    } 
-    else if (categoryDiv.innerText === "Music") {
-        finalWord.innerText = '_ _ _ _ _ _'
-        i = 2;
-        currentWord = words[i];
-    } 
-    else if (categoryDiv.innerText === "Fruits") {
-        finalWord.innerText = '_ _ _ _ _ _'
-        i = 3;
-        currentWord = words[i];
-    } 
-    else if (categoryDiv.innerText === "Programing Languages") {
-        finalWord.innerText = '_ _ _ _ _ _'
-        i = 4;
-        currentWord = words[i];
-    } 
-    else if(categoryDiv.innerText ===  "Drinks"){
-        finalWord.innerText =`_ _ _ _ _ `
-        i = 5
-        currentWord = words[i];
+    let chosenCategory = categoryDiv.innerText;
 
+    if (chosenCategory === 'Moovies') {
+        words = ['SUPERMAN', 'BATMAN', 'THOR'];
+    } 
+    else if (chosenCategory === 'Football') {
+        words = ['BARCELONA', 'MANCHESTER', 'LIVERPOOL'];
+    } 
+    else if (chosenCategory === 'Music') {
+       
+        words = ['TECHNO', 'ROCK', 'FOLK'];
+    } 
+    else if (chosenCategory === 'Fruits') {
+        words = ['PAPAYA', 'MANGO', 'ORANGE'];
+        clue=['Tropical fruit']
+    } 
+    else if (chosenCategory === 'Drinks') {
+        words = ['COFFEE', 'TEA', 'JUICE'];
     }
-
+    let randomWord = Math.floor(Math.random() * words.length);
+    chosenWord = words[randomWord];
+   for (let i = 0; i < chosenWord.length; i++) {
+       if (chosenWord[i]) {
+           finalWord.innerText += ' _';
+       } 
+       else{
+        finalWord +=' ';
+       }
+   }
 }
 choseWord()
 // Prin the letter on the screen
  function printLetter(letter){
-    if (currentWord.includes(letter)) {
-        for (let i = 0; i < currentWord.length; i++) {
-            if (currentWord[i] === letter) {
+    if (chosenWord.includes(letter)) {
+        for (let i = 0; i < chosenWord.length; i++) {
+            if (chosenWord[i] === letter) {
                 finalWord.innerText= `${finalWord.innerText.slice(0, i * 2)}${letter} ${finalWord.innerText.slice((i * 2) + 2)}`;
                 //  slice funkcijata mi raboti taka sto pocnuva od 0to mesto i odi 2 prazni mesta napred,  odnosno edno prazno mesto i crtickata 
                 // ja dodava bukvata na soodvetnata crticka
@@ -136,29 +118,30 @@ function gameStatus(){
 gameStatus();
     // Get a clueget a word from the appropriate category
  function getAClue(){
-    if(clue.innerText == ''){
-        if(categoryDiv.innerText === "Moovies"){
-            clue.innerText += ` ${clues[0]}`
-            console.log(clue[0]);
-        }
-        else if(categoryDiv.innerText === "Football"){
-            clue.innerText += ` ${clues[1]}`
-        }
-        else if(categoryDiv.innerText === "Music"){
-            clue.innerText += ` ${clues[2]}`
-        }
-        else if(categoryDiv.innerText === "Fruits"){
-            clue.innerText += ` ${clues[3]}`
-        }
-        else if(categoryDiv.innerText === "Programing Languages"){
-            clue.innerText += `${clues[4]}`
-        }
-        else{
-            clue.innerText += `${clues[5]}`
-        }
+    let chosenCategory = categoryDiv.innerText;
+    if (chosenCategory === 'Moovies') {
+        clues=['Tropical fruit']
+        clue.innerText += clues[0]
+    } 
+    else if (chosenCategory === 'Football') {
+        clues=['Tropical fruit']
+        clue.innerText += clues[0]
+    } 
+    else if (chosenCategory === 'Music') {
+       
+        clues=['Tropical fruit']
+        clue.innerText += clues[0]
+    } 
+    else if (chosenCategory === 'Fruits') {
+        clues=['Tropical fruit']
+        clue.innerText += clues[0]
+    } 
+    else if (chosenCategory === 'Drinks') {
+        clues=['Tropical fruit']
+        clue.innerText += clues[0]
+    }
     }
    
-}
 hint.addEventListener('click', function(){
     getAClue();
 })
