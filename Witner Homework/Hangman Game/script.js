@@ -118,7 +118,7 @@ gameStatus();
             clue.innerText += `Superhero Moovie`;
         } 
         else if (chosenCategory === 'Football') {
-            clue.innerText += `Most popular footballers`;
+            clue.innerText += `Most popular footballers that played in the LaLiga`;
         } 
         else if (chosenCategory === 'Brands') {
             clue.innerText +=   `Spots cloathing brand'`;
