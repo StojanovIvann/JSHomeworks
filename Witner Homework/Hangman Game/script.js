@@ -96,7 +96,7 @@ function gameStatus(){
             hangBox.innerHTML = `<h1> You Lost </h1>`;
             gameOver.id ='gameOver';
             gameOver.innerHTML+= `<h1>You Lost</h1>`
-            gameOver.innerHTML += ` <img src="download.jpg" alt=""> `
+            gameOver.innerHTML += ` <img src="download.jpg" alt="hangman.jpg"> `
             gameOver.innerHTML += ` <button class = "gameOverButton" onclick="restartGame()">Play Again </button>`
         }
         
