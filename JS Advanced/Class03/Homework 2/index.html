@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; flex-direction: row; gap: 200px;">
+    <div>
+    <div style="display: flex; gap:5px; flex-direction: column; width: 250px;">
+        <input type="text" placeholder="Title" id="title">
+        <input type="text" placeholder="Priority" id="priority">
+        <input type="text" placeholder="Color" id="color">
+
+    </div>
+    <div style="margin-top: 20px; width: 300px;">
+       <textarea name="" id="desc" cols="32" rows="10" placeholder="description" style="overflow: scroll;"></textarea>
+    </div>
+    <div style="margin-top: 20px; display: flex; gap: 20px; ">
+        <button id="addReminder" style="width: 100px;"> Add reminder</button>
+        <button id="showAllReminders">Show all reminder</button>
+    </div>
+</div>
+    <div id="table">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
