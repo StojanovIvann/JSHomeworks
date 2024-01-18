@@ -6,10 +6,10 @@ fetch(starWarsApi)
     .then(function (response) {
       return response.json();
     })
+    .catch()
     .then(function (myJson) {
       console.log(myJson);
       dataArray.push(myJson)
-
     });
 
 
@@ -44,10 +44,12 @@ function createTable(){
         
         tableDiv.innerHTML += header;
         tableDiv.innerHTML += table;
-        createdTable = true;
     }
-
-
+    let buttonDiv = document.getElementById('buttonDiv')
 button.addEventListener('click', function(){
     createTable()
-})
+    buttonDiv.innerHTML = ' '
+    // buttonDiv.innerHTML += `<button style="width: 100px; " id="">Click Me</button>`
+});
+
+
