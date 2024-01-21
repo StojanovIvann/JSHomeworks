@@ -4,8 +4,8 @@ function digitsInNumber (num){
    let digits = 0 ;
    let digitsForNegative = -1;
 //    toString() turns the number into string
-    for(let i = 0; i < num.toString().length; i++){
-        // let number  = num.toString()[i]
+    numInString = num.toString();
+    for(let i = 0; i < numInString.length; i++){
         if ( num > 0){
             digits ++
         }   
@@ -20,14 +20,12 @@ function digitsInNumber (num){
 
 
 function evenOrOdd(num){
-    let result;
     if(num % 2 === 0){
-        result = `Even`
+        return `Even`
     }
     else{
-        result = `Odd`
+      return `Odd`
     }
-    return result;
 }
 function positiveOrNegative(num){
     if(num < 0){
@@ -84,27 +82,23 @@ let squareFunction = function(num){
     return square;
 }
 
-console.log(squareFunction(22));
+console.log(squareFunction(6));
 
 
 
 console.log(' ');
 console.log('EXERCISE 4');
 
-// (function calculateFactoriel(num){
-//     if(num ===1 ){
-//         return 1;
-//     }
-//     else{
-//         let result  = num * calculateFactoriel(num - 1);
-//         console.log(result)
-//     }
-    
-
-    
-// })(4);
-
-// console.log( calculateFactoriel (10));
+ let factoriel  = (function calculateFactorial(num) {
+  let result = 1;
+  if (num === 0) {
+    return result;
+  } else {
+    result = num * calculateFactorial(num - 1);
+    return result;
+  }
+})(5);
+console.log(factoriel);
 
 console.log(' ')
 console.log('Exercise 5')
@@ -124,34 +118,47 @@ let reverseString = (string) =>{
  let arrayOfElements = [-10, 5, 7894, NaN, 'Hello world', Infinity, false, [Object, Object], 25, name => Hello` ${name}`, -Infinity, ['hi', 28, -93, true], { name: 'Bob', age: 23, }, undefined, 14, null, 159, 0, -11];
 
 
+
 let fileterArray = (array) =>{
     let positiveNumberArray = [];
 
    for( let i =0; i < array.length; i++){
     // console.log(array[i])
     let element = array[i];
-    if(typeof(element)==='number' && element !== Infinity){
+    if(typeof(element)==='number' && element !== Infinity && element > 0){
         if(element > 0){
             positiveNumberArray.push(element)
             // console.log(element)
         }
+    }
+    else if(typeof(element) === 'object' ){
+     for(let number in element){
+         if(typeof(element[number]) === 'number'){
+             if(element[number] > 0 ){
+                 positiveNumberArray.push(element[number])
     }
 
     else if (typeof(element) !== 'string' && element !==undefined && element !== null){
         for(j = 0; j < Object.values(element).length; j++){
             // console.log(element[j])
             let typeOfElement = element[j];
-            if(typeof(typeOfElement) === 'number'){
+            //  && !typeOfElement because it pushes some elements two times
+            if(typeof(typeOfElement) === 'number' && !typeOfElement){
                 if(element[j] > 0){
                 positiveNumberArray.push(element[j])
                 }
+                        }
+                    }
+                }
             }
-        }
+        } 
     }
+   
    }
    let result = 1;
    for( let y = 0; y < positiveNumberArray.length; y++){
     result = result * positiveNumberArray[y]
+
    }
    console.log(positiveNumberArray);
 
