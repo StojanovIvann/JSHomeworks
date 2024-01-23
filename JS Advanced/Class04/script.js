@@ -167,3 +167,19 @@ let fileterArray = (array) =>{
 
 
 fileterArray(arrayOfElements);
+
+
+let countVowels = (word) =>{
+    let result = 0;
+    let array = ['a','e','i','o','u']
+    for(let i =0; i < array.length; i++){
+        if(word.includes(array[i].toLowerCase())){
+            result ++
+        }
+            }
+     console.log(`${word} has ${result} vowels`);
+
+        }
+
+
+countVowels('nikola')
