@@ -31,13 +31,13 @@ fetch(apiUrl)
     console.log(usingCinnamon(recipes.recipes))
 
     
-   // Recipes that are served as both Lunch and Dinner
-    // console.log(`Recipes that are served as both Lunch and Dinner`);
-    // let lunchAndDinner = (item) =>{
-    //     let recipes = item.filter(meal => meal.mealType);
-    //     return recipes;
-    // }
-    // console.log(lunchAndDinner(recipes.recipes))
+//    Recipes that are served as both Lunch and Dinner
+    console.log(`Recipes that are served as both Lunch and Dinner`);
+    let lunchAndDinner = (item) =>{
+        let recipes = item.filter(meal => meal.mealType.length >= 2 && meal.mealType.includes('Lunch' && 'Dinner'));
+        return recipes;
+    }
+    console.log(lunchAndDinner(recipes.recipes))
 
     // 
     //  Ingredients for Mango Salsa Chicken
@@ -60,7 +60,7 @@ fetch(apiUrl)
     let avgCookingTime = (item) =>{
         let pastas = item.filter(item => item.name.includes('Pasta'))
         console.log(pastas)
-        let avgTime = pastas.reduce((a,b)=> a + b.cookTimeMinutes,0) 
+        let avgTime = pastas.reduce((a,b)=> a + b.cookTimeMinutes / pastas.length,0) 
         return avgTime;
     }
 
@@ -68,7 +68,7 @@ fetch(apiUrl)
     // Lowest review recipe
     console.log('Lowest reviewed recipe')
     let lowestRevies = (item) =>{
-        let lowest  = item.sort((a,b) => b.reviewCount - a.reviewCount)
+        let lowest  = item.sort((a,b) => a.reviewCount - b.reviewCount)
         return lowest
     }
     console.log(lowestRevies(recipes.recipes)[0])
