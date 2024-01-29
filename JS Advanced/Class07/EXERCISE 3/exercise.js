@@ -34,6 +34,7 @@ fetch(apiUrl)
 //    Recipes that are served as both Lunch and Dinner
     console.log(`Recipes that are served as both Lunch and Dinner`);
     let lunchAndDinner = (item) =>{
+        // Staviv >=2 bidejki ima i recepti koji se sluzat i za dorucek rucek i vecera dokolku stoese samo ===2 dava samo za rucek i vecera 
         let recipes = item.filter(meal => meal.mealType.length >= 2 && meal.mealType.includes('Lunch' && 'Dinner'));
         return recipes;
     }

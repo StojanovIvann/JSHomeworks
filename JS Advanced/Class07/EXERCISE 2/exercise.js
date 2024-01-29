@@ -1,6 +1,3 @@
-
-
-
 let apiUrl = "https://dummyjson.com/products";
 
 fetch(apiUrl)
@@ -46,6 +43,7 @@ fetch(apiUrl)
 
 
     //Highest ranked skicare
+
     let hiestRankedSkinCare = (item) => {
       let skinCare = item.filter((item) => item.category === "skincare").sort((a, b) => b.rating - a.rating);
       console.log(skinCare[0]);
@@ -87,9 +85,12 @@ fetch(apiUrl)
       return price;
     };
     let price = highestPrice(products.products);
-    console.log(price);
+      console.log('Highest  priced item');
+       console.log(price[0])
 
 
+    console.log('')
+    console.log('')
 
     // Lowest price
     let lowestPrice = (item) => {
@@ -97,7 +98,19 @@ fetch(apiUrl)
       return price;
     };
     let lowPrice = lowestPrice(products.products);
-    console.log(lowPrice[0]);
+    console.log("Lowest priced item");
+    console.log( lowPrice[0]);
+
+
+    console.log(' ')
+    console.log('Index of all samsung phones')
+    // Index of all samsung phones
+    // Ovaa ne mi bese jasno 
+    let indexOFSamsung = (item) =>{
+      let samsungPhones = item.filter((item) => item.brand === 'Samsung' && item.category ==='smartphones')
+      return samsungPhones
+    }
+    console.log(indexOFSamsung(products.products))
     
   });
 
