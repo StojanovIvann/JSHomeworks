@@ -51,7 +51,7 @@ fetch(apiUrl)
     // Avarage calories per serving
     let avgCalories = (item) =>{
         let americanCuisine = item.filter(item => item.cuisine == `American`)
-        let avgNumOfCalories = americanCuisine.reduce((a, b) => a + b.caloriesPerServing, 0);
+        let avgNumOfCalories = americanCuisine.reduce((a, b) => a + b.caloriesPerServing / americanCuisine.length, 0);
         return avgNumOfCalories
     }
     console.log(`The avarage calories per serving for all American cuisine recipes  is: ${avgCalories(recipes.recipes)} `)
