@@ -31,7 +31,6 @@ const renderBeers = (data) => {
         <button class="detailsButton">More Details</button>
       </div>`
     )
-    .join('');
 };
 
 // Function for beer details
