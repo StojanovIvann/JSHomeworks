@@ -9,12 +9,12 @@ const apiLink = "https://api.punkapi.com/v2/beers";
 const searchBtn = document.getElementById("searchButton");
 const randomBeer = document.getElementById("randomBeer");
 
-// Global variables
-let currentPage = 1;
-let itemsPerPage = 0;
 
+ let currentPage = 1;
+ let itemsPerPage = 0;
 // Function to render beers on screen
 const renderBeers = (data) => {
+ 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, data.length);
 
@@ -87,10 +87,12 @@ const beersApp = (api) => {
       renderBeers(data);
 
       // Event listeners
+      // Search Button
       searchBtn.addEventListener("click", () => {
         searchBeer(data);
       });
 
+        // Sorting the beers
       sortDropdown.addEventListener("change", () => {
         const selected = sortDropdown.value;
         const sortData = [...data];
@@ -116,6 +118,7 @@ const beersApp = (api) => {
         });
       });
 
+      // Pagination
       paginationDropdown.addEventListener("change", () => {
         itemsPerPage = parseInt(paginationDropdown.value);
         currentPage = 1;
