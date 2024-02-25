@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Beers Bar</title>
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <!-- <link rel="stylesheet" href="../stylesheet/beers.css"> -->
+</head>
+<body>
+    <div class="topNav">
+        <ul class="navBar">
+            <li id="beerBar"> <a href="index.html" class="beerItems" >Beer Bar</a></li>
+            <li id="beers"><a href="../view/beers.html" class="beerItems">Beers</a></li>
+            <li class="beerItems" id="randomBeer" class="beerItems">Random Beer</li>
+        </ul>
+        <div class="searchSection">
+        <input type="text" placeholder="Search..." id="searchBox">
+        <button type="button" id="searchButton">Search</button>
+    </div>
+    </div>
+    <div id="sortingDiv">
+        <div>
+            <label for="showNumOfBeers"></label>
+            <select name="numOfBeers" id="paginationDropdown" class="sort">
+                <option value="all" class="pageSize" selected disabled>Show</option>
+                <option value= 5  class="pageSize">Show 5</option>
+                <option value= 10 class="pageSize"  >Show 10</option>   
+                <option value= 20 class="pageSize">Show 20</option>
+            </select>
+        </div>
+        <div>
+            <label for="sorting"></label>
+            <select name="sort" id="sortDropdown" class="sort">
+                <option value="" disabled selected>Sort By</option>
+                <option value='name' id="option1">Sort by name</option>
+                <option value='alc' id="option2">Alcohol %</option>
+                <option value='first' id="option3">First brewed</option>
+                <option value='bitternes' id="option4">Bitternes</option>
+                </select>
+        </div>
+    </div>
+    <div id="beersDiv"></div>
+
+    <div id="nextButtons">
+        <button id="prev" class="nextAndPrev">Previous</button>
+        <button id="next" class="nextAndPrev">Next</button>
+    </div>
+    <script src="../script/script.js"></script>
+    <!-- <script src="../src/details.js"></script> -->
+    <!-- <script src="../script/randomBeer.js"></script> -->
+</body>
+</html>
