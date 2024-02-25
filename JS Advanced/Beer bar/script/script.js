@@ -98,11 +98,14 @@ const beersApp = (api) => {
 
         if (selected === "name") {
           sortData.sort((a, b) => a.name.localeCompare(b.name));
-        } else if (selected === "alc") {
+        } 
+        else if (selected === "alc") {
           sortData.sort((a, b) => a.abv - b.abv);
-        } else if (selected === "bitternes") {
+        } 
+        else if (selected === "bitternes") {
           sortData.sort((a, b) => a.ph - b.ph);
-        } else if (selected === "first") {
+        } 
+        else if (selected === "first") {
           sortData.sort((a, b) => new Date(parseFloat(a.first_brewed)) - new Date(parseFloat(b.first_brewed)))
         }
 
