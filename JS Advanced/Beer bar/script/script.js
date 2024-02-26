@@ -1,5 +1,5 @@
 // Constants for DOM elements
-const beersDiv = document.getElementById("beersDiv");
+let  beersDiv = document.getElementById("beersDiv");
 const searchBar = document.getElementById("searchBox");
 const sortDropdown = document.getElementById("sortDropdown");
 const paginationDropdown = document.getElementById("paginationDropdown");
